@@ -16,12 +16,13 @@ function setInputValue(setInputID,inputValue){
     document.getElementById(setInputID).innerText = setPrevValue + inputValue;
 }
 function setTotalBalance(fromInput,isAdd) {
+    const totalBalanceTag = document.getElementById("total-amount")
     const totalBlanceValue = getInnerTextValue("total-amount");
     if (isAdd == true) {
-        document.getElementById("total-amount").innerText = totalBlanceValue + fromInput;
+        totalBalanceTag.innerText = totalBlanceValue + fromInput;
     }
     else{
-        document.getElementById("total-amount").innerText = totalBlanceValue - fromInput;
+        totalBalanceTag.innerText = totalBlanceValue - fromInput;
     }
 }
 document.getElementById("depo-button").addEventListener("click",function () {
