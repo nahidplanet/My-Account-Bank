@@ -1,4 +1,9 @@
-
+function getInnerTextValue(getInnerID) {
+    const getInnerTag =  document.getElementById(getInnerID);
+    const getInnerText = getInnerTag.innerText;
+    const getInnerValue = parseFloat(getInnerText);
+    return getInnerValue;
+}
 function getInputValue(inputID){
     const inputTag = document.getElementById(inputID);
     const inputText = inputTag.value;
@@ -7,24 +12,18 @@ function getInputValue(inputID){
     return inputValues;
 }
 function setInputValue(setInputID,inputValue){
-    const setField = document.getElementById(setInputID);
-    const setPrevText = setField.innerText;
-    const setPrevValue = parseFloat(setPrevText);
-    setField.innerText = setPrevValue + inputValue;
+    const setPrevValue = getInnerTextValue(setInputID);
+    document.getElementById(setInputID).innerText = setPrevValue + inputValue;
 }
 function setTotalBalance(fromInput,isAdd) {
-   const totalBalanceTag =  document.getElementById("total-amount");
-   const totalBlanceText = totalBalanceTag.innerText;
-   const totalBlanceValue = parseFloat(totalBlanceText);
+    const totalBlanceValue = getInnerTextValue("total-amount");
     if (isAdd == true) {
-        totalBalanceTag.innerText = totalBlanceValue + fromInput;
+        document.getElementById("total-amount").innerText = totalBlanceValue + fromInput;
     }
     else{
-        totalBalanceTag.innerText = totalBlanceValue - fromInput;
-
+        document.getElementById("total-amount").innerText = totalBlanceValue - fromInput;
     }
 }
-
 document.getElementById("depo-button").addEventListener("click",function () {
     const inputValue =  getInputValue("depo-input");
     if (inputValue > 0) {
@@ -34,56 +33,10 @@ document.getElementById("depo-button").addEventListener("click",function () {
 });
 document.getElementById("withdraw-button").addEventListener("click",function () {
     const inputValue =  getInputValue("with-input");
-    if (inputValue > 0) {
+     const totalCurrentBalance = getInnerTextValue("total-amount");
+    if (inputValue > 0 && inputValue <= totalCurrentBalance ) {
         setInputValue("withdraw-amount",inputValue);
         setTotalBalance(inputValue,false);
     }
 });
 
-// function getInputValue(fieldId) {
-//     const inputField = document.getElementById(fieldId);
-//     const valueInText = inputField.value;
-//     const value = parseFloat(valueInText);
-//     inputField.value = '';
-//     return value;
-// }
-// function getInnerTextValue(fieldId) {
-//     const fieldTag = document.getElementById(fieldId);
-//     const fieldValueInText = fieldTag.innerText;
-//     const value = parseFloat(fieldValueInText);
-//     return value;
-// }
-// function updateTotal(fieldId, amount) {
-//     const previousTotal = getInnerTextValue(fieldId);
-//     const newTotal = previousTotal + amount;
-//     document.getElementById(fieldId).innerText = newTotal;
-//     return newTotal;
-// }
-// function updateBalance(amount, isAdding) {
-//     const previousBalance = getInnerTextValue('balance-total');
-//     let newBalance;
-//     if (isAdding == true) {
-//         newBalance = previousBalance + amount;
-//     }
-//     else {
-//         newBalance = previousBalance - amount;
-//     }
-//     document.getElementById('balance-total').innerText = newBalance;
-// }
-// document.getElementById('deposit-button').addEventListener('click', function () {
-//     const amount = getInputValue('deposit-input');
-//     if (amount > 0) {
-//         updateTotal('deposit-total', amount);
-//         updateBalance(amount, true);
-//     }
-// });
-
-// // handle withdraw
-// document.getElementById('withdraw-button').addEventListener('click', function () {
-//     const amount = getInputValue('withdraw-input');
-//     const balance = getInnerTextValue('balance-total');
-//     if (amount > 0 && amount <= balance) {
-//         updateTotal('withdraw-total', amount);
-//         updateBalance(amount, false)
-//     }
-// })
