@@ -1,0 +1,119 @@
+
+
+.loginInput{
+    background-color: rgba(12, 190, 107, 0.65);
+    padding: 30px 25px;
+    width: 40%;
+    border-radius: 10px;
+
+}
+.loginInput input{
+    
+    width: 90%;
+
+}
+.header{
+    font-weight: bold;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+
+}
+.loginInput{
+   width: 500px;
+   margin: 0 auto;
+}
+input{
+width: 100%;
+border: none;
+padding: 12px;
+margin: 6px 0;
+border-radius: 5px;
+
+}
+button{
+    border:none;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* error  */
+.error{
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: red;
+    text-transform: capitalize;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+/* bank page  */
+.mainSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.mainSection .box-1{
+    background: rgba(135, 207, 235, 0.794);
+}
+.mainSection .box-2{
+    background: rgba(224, 224, 6, 0.835);
+    margin: 0 20px;
+}
+.mainSection .box-3{
+    background: rgba(5, 134, 5, 0.719);
+}
+.mainSection .box-1,.box-2,.box-3{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+.mainSection h2{
+    text-transform: capitalize;
+    color: #FFF ;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    margin: 0 0 10px 0;
+}
+.mainSection h3{
+    text-transform: capitalize;
+    color: #FFF ;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 27px;
+    margin: 0;
+
+}
+
+.input-field{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+#deposite-input{
+    background-color: rgba(199, 54, 54, 0.65);
+    padding: 30px 25px;
+    width: 40%;
+    border-radius: 10px;
+}
+#deposite-input input{
+   width: 90%;
+   margin-bottom: 20px;
+}
+
+#withdraw-input{
+    background-color: rgba(12, 190, 107, 0.65);
+    padding: 30px 25px;
+    width: 40%;
+    border-radius: 10px;
+}
+#withdraw-input input{
+    width: 90%;
+    margin-bottom: 20px;
+ }
